@@ -1,7 +1,7 @@
 (function(){
   var gulp  = require('gulp');
   var $     = require('gulp-load-plugins')({lazy:false});
-
+  var bower = require('main-bower-files');
 $.livereload();
 $.livereload.listen();
 
@@ -9,8 +9,8 @@ var paths = {
   index: './client/index.html',
   root: './client',
   html: './client/**/*.html',
-  scripts: './client/**/*.js',
-  styles: './client/**/*.css'
+  scripts: './client/app/**/*.js',
+  styles: './client/app/**/*.css'
 }
 
 gulp.task('default', $.sequence('inject', 'server', 'watch'));
@@ -29,13 +29,15 @@ function startWatch(){
 }
 
 function startInject(){
-  var target  = gulp.src( paths.index );
-  var scripts = gulp.src( paths.scripts, {read:false} );
-  var styles  = gulp.src( paths.styles, {read:false} );
+  var target      = gulp.src( paths.index );
+  var scripts     = gulp.src( paths.scripts, {read:false} );
+  var styles      = gulp.src( paths.styles, {read:false} );
+  var bowerFiles  = gulp.src( bower(), {read:false} );
 
   return target
     .pipe( $.inject( scripts,  {relative:true}) )
     .pipe( $.inject( styles,  {relative:true}) )
+    .pipe( $.inject( bowerFiles,  {name:'vendor', relative:true}) )
     .pipe( gulp.dest( paths.root ) );
 }
 
