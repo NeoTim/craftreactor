@@ -22,7 +22,7 @@
 
   /* Start Server */
   app.listen(config.port, function(){
-    console.log('App Listening on localhost:9000');
+    console.log('App Listening on localhost:' + config.port);
   });
 
   /* Export Express App */
