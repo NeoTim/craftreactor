@@ -11,7 +11,6 @@
   "license": "ISC",
   "devDependencies": {
     "connect-livereload": "^0.5.0",
-    "express": "^4.9.7",
     "gulp": "^3.8.8",
     "gulp-inject": "^1.0.2",
     "gulp-livereload": "^2.1.1",
@@ -20,6 +19,7 @@
     "main-bower-files": "^2.5.0"
   },
   "dependencies": {
+    "express": "^4.9.7",
     "body-parser": "^1.11.0",
     "compression": "^1.4.0",
     "connect-mongo": "^0.7.0",
