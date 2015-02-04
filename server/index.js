@@ -21,7 +21,7 @@
   require('./api')(app);
 
   /* Start Server */
-  app.listen(9000, function(){
+  app.listen(config.port, function(){
     console.log('App Listening on localhost:9000');
   });
 
