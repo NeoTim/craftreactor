@@ -20,9 +20,10 @@
   require('./config')(app);
   require('./api')(app);
 
+  var port = process.env.PORT || 9000
   /* Start Server */
-  app.listen(config.port, function(){
-    console.log('App Listening on localhost:' + config.port);
+  app.listen(port, function(){
+    console.log('App Listening on localhost:' + port);
   });
 
   /* Export Express App */
