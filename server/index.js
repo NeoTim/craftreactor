@@ -5,14 +5,13 @@
   var express     = require('express');
   var mongoose    = require('mongoose');
   var config      = require('./config/settings.js');
-  var http        = require('http');
 
   /*Connect to mongo */
   mongoose.connect(config.mongo.uri, config.mongo.options);
 
   /* Initialize Express Server */
   var app = express();
-  var server = require('http').createServer(app);
+
 
 
 
