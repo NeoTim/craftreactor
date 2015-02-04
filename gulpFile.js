@@ -19,6 +19,7 @@ gulp.task('watch', startWatch);
 gulp.task('inject', startInject)
 
 function startServer(){
+  process.env.NODE_ENV = 'development';
   require('./server');
 
 }
