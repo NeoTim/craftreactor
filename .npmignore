@@ -1,5 +1,3 @@
-src/build
-.tmp
 # Ignore Visual Studio  Project #
 ###################
 *.user
@@ -71,4 +69,3 @@ ehthumbs.db
 Icon?
 Thumbs.db
 packages
-
