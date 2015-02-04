@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="app/core/styles/app.css">
   <!-- endinject -->
 </head>
-<body>
-<h1 id="title"></h1>
+<body ng-controller="AppController as vm">
+<main ng-include="'app/core/views/title.html'">
+</main>
   <!-- vendor:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -25,6 +26,7 @@
 
   <!-- inject:js -->
   <script src="app/app.js"></script>
+  <script src="app/core/controllers/app.controller.js"></script>
   <!-- endinject -->
 </body>
 </html>
