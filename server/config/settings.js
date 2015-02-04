@@ -30,7 +30,7 @@
 
   if(settings.env === 'production') {
     settings.mongo = {
-        uri: process.env.MONGO_URI
+        uri: process.env.MONGO_URI || 'mongodb://localhost/yosoa-dev'
     };
   }
 

@@ -1,7 +1,7 @@
 (function () {
 
   var express = require('express');
-
+  var path = require('path')
 
   module.exports = function(app, config) {
     // app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));

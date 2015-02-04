@@ -13,14 +13,22 @@ var paths = {
   styles: './client/app/**/*.css'
 }
 
-gulp.task('default', $.sequence('inject', 'server', 'watch'));
-gulp.task('server', startServer);
+gulp.task('dev', $.sequence('inject', 'server:dev', 'watch'));
+gulp.task('deploy', $.sequence('inject', 'server:deploy', 'watch'));
+
+gulp.task('default', $.sequence('inject', 'server:dev', 'watch'));
+gulp.task('server:dev', startServer('development'));
+gulp.task('server:deploy', startServer('production'));
 gulp.task('watch', startWatch);
 gulp.task('inject', startInject)
 
-function startServer(){
-  process.env.NODE_ENV = 'development';
-  require('./server');
+
+function startServer(env){
+  return function() {
+    process.env.NODE_ENV = env;
+    require('./server');
+
+  }
 
 }
 function startWatch(){
